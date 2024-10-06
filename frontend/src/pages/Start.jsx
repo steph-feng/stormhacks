@@ -5,9 +5,11 @@ import './Start.css';
 const Start = () => {
     const navigate = useNavigate();
     const [file, setFile] = useState(null);
+    const [uploadDisabled, setUploadDisable] = useState(true);
 
     const handleFileChange = (e) => {
         setFile(e.target.files[0]);
+        setUploadDisable(false);
     };
 
     const handleSubmit = async (e) => {
@@ -43,7 +45,7 @@ const Start = () => {
                     onChange={handleFileChange} 
                     className="file-input"
                 />
-                <button type="submit" className="upload-btn">upload</button>
+                <button disabled={uploadDisabled} type="submit" className={uploadDisabled ? "upload-btn-disabled" : "upload-btn"}>upload</button>
             </form>
         </div>
     );
