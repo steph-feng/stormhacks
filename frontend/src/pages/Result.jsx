@@ -8,6 +8,7 @@ const Result = () => {
     return (
         <div>
             <div>
+                <div>{res.num_colonies}</div>
                 <img src={`http://localhost:8000${res.image_url}`} alt="processed" />
             </div>
         </div>
