@@ -1,4 +1,5 @@
 .result-container {
+    background-image: url("../assets/background.png");
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,14 +8,12 @@
     font-size: 20px;
 }
 
-.image-container {
-    background-color: #d3d3c9; 
-    padding: 1rem;
-    border-radius: 1rem;
+.text {
+    margin-bottom: 2rem;
 }
 
 .image-container img {
-    width: 200px; 
+    width: 30vw; 
     height: auto;
     display: block;
     margin: 0 auto;

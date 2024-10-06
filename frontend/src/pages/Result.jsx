@@ -9,7 +9,7 @@ const Result = () => {
     return (
         <div className="result-container">
             <div className="image-container">
-                <div>{res.num_colonies}</div>
+                <div className="text">your colony count is: {res.num_colonies}</div>
                 <img src={`http://localhost:8000${res.image_url}`} alt="processed" />
             </div>
         </div>
