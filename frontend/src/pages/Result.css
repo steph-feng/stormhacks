@@ -1,5 +1,5 @@
 .result-container {
-    background-image: url("../assets/background.png");
+    background-image: url("../pages/background2.svg");
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,8 +13,8 @@
 }
 
 .image-container img {
-    width: 30vw; 
-    height: auto;
+    width: auto; 
+    height: 40vh;
     display: block;
-    margin: 0 auto;
+    margin-bottom: 15vh;
 }
