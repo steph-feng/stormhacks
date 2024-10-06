@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+/* for testing only */
+
 const ImageUpload = () => {
     const [file, setFile] = useState(null);
     const [response, setResponse] = useState(null);
@@ -14,7 +16,7 @@ const ImageUpload = () => {
         formData.append('image', file);
 
         try {
-            const res = await fetch('http://localhost:8080/api/process/', {
+            const res = await fetch('http://localhost:8000/api/process/', {
                 method: 'POST',
                 body: formData,
             });
@@ -39,8 +41,7 @@ const ImageUpload = () => {
 
             {response && (
                 <div>
-                    <h3>Number of Colonies: {response.num_colonies}</h3>
-                    <img src={response.image_url} alt="Contour" />
+                    <img src={`http://localhost:8000${response.image_url}`} />
                 </div>
             )}
         </div>

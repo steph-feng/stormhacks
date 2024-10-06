@@ -13,9 +13,9 @@ class ProcessImageView(APIView):
         serializer = ProcessImageSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            #image = UploadImage.objects.get(id=file_serializer.data['id'])
-            #image_url = image.count()  
-            return Response(status=status.HTTP_201_CREATED)
+            image = ProcessImage.objects.get(id=serializer.data['id'])
+            image_url = image.count()  
+            return Response({'image_url': image_url}, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
