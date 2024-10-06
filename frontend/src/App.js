@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ImageUpload from './sample';
+import Start from "./pages/Start";
+import Result from "./pages/Result";
 import './App.css';
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
     <BrowserRouter>
       <div className='App'>
         <Routes>
-          <Route path='/' element={<ImageUpload />}></Route>
+          <Route path='/' element={<Start />}></Route>
+          <Route path='/result' element={<Result />}></Route>
         </Routes>
       </div>
     </BrowserRouter>

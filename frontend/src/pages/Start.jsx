@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-/* for testing only */
-
-const ImageUpload = () => {
+const Start = () => {
+    const navigate = useNavigate();
     const [file, setFile] = useState(null);
-    const [response, setResponse] = useState(null);
 
     const handleFileChange = (e) => {
         setFile(e.target.files[0]);
@@ -26,7 +25,7 @@ const ImageUpload = () => {
             }
 
             const data = await res.json();
-            setResponse(data);
+            navigate('/result', { state: { res: data } });
         } catch (err) {
             console.error(err);
         }
@@ -36,16 +35,10 @@ const ImageUpload = () => {
         <div>
             <form onSubmit={handleSubmit}>
                 <input type="file" onChange={handleFileChange} />
-                <button type="submit">Upload</button>
+                <button type="submit">upload</button>
             </form>
-
-            {response && (
-                <div>
-                    <img src={`http://localhost:8000${response.image_url}`} />
-                </div>
-            )}
         </div>
-    );
-};
+    )
+}
 
-export default ImageUpload;
+export default Start
